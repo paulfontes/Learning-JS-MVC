@@ -1,5 +1,6 @@
 import { AppState } from "../AppState.js"
 import { player } from "../models/player.js"
+import { playersService } from "../services/PlayerService.js"
 
 export class PlayersController {
 
@@ -7,7 +8,8 @@ export class PlayersController {
         console.log('🥷🏾🎮')
         AppState.players
         this.drawPlayers()
-        this.scorePoint()
+        // this.drawScore()
+        // this.scorePoint()
     }
     drawPlayers(){
         console.log('Do I run')
@@ -18,9 +20,15 @@ export class PlayersController {
         playersElement.innerHTML = `${playerContent}`
     }
     scorePoint(playerName){
-        
         console.log('clicked', playerName)
-
+        playersService.scorePoint(playerName)
+        this.drawPlayers()
+        
 
     }
+    // drawScore(){
+    //     console.log("Do I run?!")
+    //     const playerScores = playersService.scorePoint()
+    //     let playerScoreElm = document.getElementById('scores')
+    // }
 }
