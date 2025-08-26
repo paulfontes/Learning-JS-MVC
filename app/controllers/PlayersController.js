@@ -26,6 +26,13 @@ export class PlayersController {
         
 
     }
+    losePoint(playerName){
+        console.log('clicked', playerName)
+        playersService.losePoint(playerName)
+        this.drawPlayers()
+
+
+    }
     // drawScore(){
     //     console.log("Do I run?!")
     //     const playerScores = playersService.scorePoint()

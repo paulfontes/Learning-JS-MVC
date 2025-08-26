@@ -10,10 +10,13 @@ export class player{
     get PlayerTemplateCard(){
         return /*html*/`
         <div class="card">
-            <div class="card-body">
-                ${this.name} - ${this.score}
-            </div>
-            <button onclick="app.playerController.scorePoint('${this.name}')"> + </button>
-        </div>`
+        <div class="card-body">
+        ${this.name} - ${this.score}
+        </div>
+        <button onclick="app.playerController.scorePoint('${this.name}')"> + </button>
+        
+        <button onclick="app.playerController.losePoint('${this.name}')"> - </button>
+            
+            </div>`
     }
 }
